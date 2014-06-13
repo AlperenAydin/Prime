@@ -17,7 +17,7 @@ sieve p = sievelist [2..p]
 
 --Function used for testing sieve
 --Functions used for the testing are in Prime.hs
-testSieve :: Int -> Bool
+testSieve :: Int -> Maybe Bool
 testSieve = testPrime.sieve
 
 
