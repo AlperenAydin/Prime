@@ -19,10 +19,13 @@ isprime 2 = True
 isprime 3 = True
 isprime p = all (/=0) $ map (\ n -> p `mod` n) (intervalle p)
 
+-- These two functions check if a set is made of primes or not.
+--1st one gives a general answer
 testPrime :: [Int] -> Maybe Bool
 testPrime [] = Nothing
 testPrime l = Just $ all isprime l
 
+--While the 2nd one return a list telling the primality of each element
 testPrime' :: [Int] -> Maybe [(Int, Bool)]
 testPrime' [] = Nothing
 testPrime' xs = Just  [(x, isprime x) | x<- xs]
