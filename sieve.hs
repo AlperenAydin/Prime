@@ -14,3 +14,12 @@ sievelist (x:xs) = x:sievelist [ k | k <-xs, k `mod` x /=0 ]
 sieve ::Int -> [Int]
 sieve p = sievelist [2..p]
 
+
+--Function used for testing sieve
+--Functions used for the testing are in Prime.hs
+testSieve :: Int -> Bool
+testSieve = testPrime.sieve
+
+
+testSieve' :: Int -> Maybe [(Int, Bool)]
+testSieve' = testPrime'.sieve
